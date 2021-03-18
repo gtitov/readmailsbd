@@ -1,4 +1,4 @@
-from os.path import join, isfile
+from os.path import join, isfile, basename
 from bitstruct import unpack_dict
 import sys
 
@@ -47,10 +47,11 @@ file_structure = {
 bin_struct = ">" + "".join(file_structure.values())
 bin_fields = list(file_structure.keys())
 
-def check_imei(sbdfile, csvfolder, sbdstructure):
+def check_imei(sbdpath, csvfolder, sbdstructure):
     """Checks if CSV for the imei exists
     If not create CSV for the imei
     """
+    sbdfile = basename(sbdpath)
     imei = sbdfile.split("_")[0]
     csvfile = "{}.csv".format(imei)
     csvpath = join(csvfolder, csvfile)
