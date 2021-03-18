@@ -58,7 +58,7 @@ def check_imei(sbdfile, csvfolder, sbdstructure):
         return csvpath
     else:
         with open(csvpath, mode="w") as f:
-            headers_list = list(sbdstructure.keys())[:-1]  # remove "Unused" column
+            headers_list = list(sbdstructure.keys())
             headers = ",".join(headers_list)
             f.write(headers)
             f.write("\n")
@@ -115,7 +115,6 @@ try:
     with open(sbd, "rb") as f:
         raw_values = unpack_dict(bin_struct, bin_fields, f.read())
     human_readable = convert(raw_values)
-    human_readable.pop("Unused", None)
     values_list = map(float_to_str, human_readable.values())  # convert to str to join further
     values_str = ",".join(values_list)
     # print(values_str)
