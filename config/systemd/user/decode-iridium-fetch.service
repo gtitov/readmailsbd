@@ -1,0 +1,9 @@
+[Unit]
+Description=Fetch Iridium data from email 
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/fdm -f %h/.fdm.conf fetch
+
+[Install]
+RequiredBy=decode-iridium.target

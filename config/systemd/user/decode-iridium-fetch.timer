@@ -1,0 +1,9 @@
+[Unit]
+Description=Fetch Iridium data from email every hour
+
+[Timer]
+OnCalendar=hourly
+Unit=decode-iridium-fetch.service
+
+[Install]
+#RequiredBy=decode-iridium.target

@@ -1,0 +1,10 @@
+[Unit]
+Description=Fetch Iridium data from email and dump it into ~/Mail/DUMP.csv
+Requires=decode-iridium-fetch.service
+After=decode-iridium-fetch.service
+Requires=decode-iridium-dump.path
+After=decode-iridium-dump.path
+
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,10 @@
+[Unit]
+Description=Fetch Iridium data from email every day
+
+[Timer]
+OnCalendar=minutely
+#OnCalendar=daily
+Unit=decode-iridium.target
+
+[Install]
+#RequiredBy=decode-iridium.target
