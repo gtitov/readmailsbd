@@ -1,7 +1,0 @@
-[Unit]
-Description=Dump Iridium data into ~/Mail/DUMP.csv
-
-[Service]
-Type=oneshot
-ExecStart=/usr/bin/find %h/Mail/attachments  -iname '*.sbd*' -size 32c -type f -exec /bin/sh -c '/usr/local/bin/bin2csv {}>>/home/r4/Mail/$(date --iso).csv' \; -delete
-
