@@ -1,0 +1,8 @@
+[Unit]
+Description=Fetch and decode Marlin data from email every hour
+
+[Timer]
+OnCalendar=hourly
+Unit=marlin-decode.service
+
+[Install]

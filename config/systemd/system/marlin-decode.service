@@ -1,0 +1,13 @@
+[Unit]
+Description=Decode data from sbd files to csv
+# decode after fetch
+Requires=marlin-fetch.service
+After=marlin-fetch.service
+
+[Service]
+Type=oneshot 
+ExecStart=/usr/bin/find /home/root-gy/Mail/marlin -type f -iname '*.sbd' -size 32c -exec python3 '/home/root-gy/Mail/readmailsbd/unpack_weather.py' {} '/var/www/mail/marlin' \; -exec mv {} /home/root-gy/Mail/marlin-archive \;
+# use full path to executables as specified in systemd documentation
+# check path of the python script
+# {} is for each file found
+# run python then move to archive

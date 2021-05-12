@@ -1,0 +1,10 @@
+[Unit]
+Description=Fetch Marlin data from email 
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/fdm -f /home/root-gy/.marlin.conf fetch
+
+
+[Install]
+RequiredBy=marlin-decode.service
