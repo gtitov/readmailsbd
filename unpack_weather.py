@@ -132,7 +132,7 @@ except (IOError, IndexError):
     sys.stderr.write(
         "Usage: ./"
         + sys.argv[0]
-        + " FILE.sbd\n"
+        + " FILE.sbd FOLDER_FOR_CSV\n"
         + "       Unpack binary data from Iridium weather buoy into csv\n"
     )
     sys.stderr.flush()
