@@ -37,6 +37,8 @@ try:
     folder_for_csv = sys.argv[2]
     with open(sbd, "r") as f:
         values_str = f.read()
+        # if values_str == "no data":
+        #     exit()
     # print(values_str)
 
     csv = check_imei(sbd, folder_for_csv, file_structure)
