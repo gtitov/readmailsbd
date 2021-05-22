@@ -4,7 +4,7 @@ Description=Fetch Marlin data from email
 [Service]
 Type=oneshot
 # -m key to ignore lock file and run multiple instances of fdm simultaniously
-ExecStart=/usr/bin/fdm -fm /home/root-gy/.marlin.conf fetch
+ExecStart=/usr/bin/fdm -mf /home/root-gy/.marlin.conf fetch
 
 
 [Install]
